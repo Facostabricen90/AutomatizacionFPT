@@ -28,3 +28,16 @@ def test_button_id_dynamic_change_color_on_hover(home_page):
     color_after_hover = button_dynamic_id.value_of_css_property("background-color")
 
     assert color_before_hover != color_after_hover, "El color del botón no cambió al hacer hover"
+
+
+@pytest.mark.sandbox
+@pytest.mark.regression
+def test_select_checkbox(home_page):
+    home_page.navigate_home()
+    home_page.select_checkbox("Hamburguesa")
+
+@pytest.mark.sandbox
+@pytest.mark.regression
+def test_select_radio_button(home_page):
+    home_page.navigate_home()
+    home_page.select_radio_button("No")
